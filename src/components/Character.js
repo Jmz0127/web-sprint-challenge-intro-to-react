@@ -26,7 +26,7 @@ span {
 const Character = (props) => {
     return (
         <StyledCharacter>
-            <h2>{props.people.name}  </h2>
+            <h2>{props.people.name}  <span>{props.people.birth_year}</span></h2>
         </StyledCharacter>
     )
 }

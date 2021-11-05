@@ -17,9 +17,7 @@ function App() { //changed this to a function layout
   useEffect(() => { //added useEffect hook here to fetch API 
     axios.get('https://swapi.dev/api/people')
     .then(resp => {
-      console.log(resp);
       setPeoples(resp.data);
-      // console.log(resp);
     })
     .catch(err => console.error(err))
   }, []) 

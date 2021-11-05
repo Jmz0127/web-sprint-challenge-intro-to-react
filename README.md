@@ -79,6 +79,18 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
+
+React JS essentially the DOM whisperer - it creates a middleman/woman in the form of a virtual DOM and every time our React code changes those changes get passed from the virtual DOM to the DOM itself. Takes the pressure of working with the DOM off of the developer and the browser itself, which is always a plus! It also allows for more lean code - for example, instead of having an html file and a JS file that uses the same button <>, we could have a button onClick function in JSX that combines the two - this not only allows other developers to read our code more seamlessly, but can cut down on mistakes. The less code you are coding the less opportunity there are for mistakes.
+
 1. Describe component state.
+
+Component state is a plain JS object. Component state, is well, the state of a component. By bringing a setState() into a component, you are essentially telling the computer that whenever that component changes, we want to update the components state object, and re-render. You start the process by import React, {useState} from 'react'. This is considered importing the useState Hook. Hooks are powerful in that you used to have to convert a function component to a class in React, but a Hook inside of a function component does that inherently. Less code! Woo!
+
 1. Describe props.
+
+Props, short for 'properties', are also considered plain JS objects. Props differ in that they are passed to a component from a parent to child, whereas state is already in the component when set up. They both however affect the output of a render.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+Side effects are an extremely versatile tool that allows a developer to create interactivity, animations, or various other requests and is a very clean and clear way to invoke some sort of request. You start the process by import React, {useEffect} from 'react', similar to {useState}. This is called using the useEffect Hook. To sync effects of state and effects, you would add a useEffect after you set up a useState, inside of the same function. useState would tell you where to start, and useEffect could return a click count based on that starting number, for example.
+
