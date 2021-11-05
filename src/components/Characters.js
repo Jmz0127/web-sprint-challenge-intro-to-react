@@ -3,11 +3,11 @@ import Character from './Character';
 import styled from 'styled-components';
 
 // add styling here
-const StyledCharacters = styled.div`
+// const StyledCharacters = styled.div`
 
 
 
-`
+// `
 
 //three elements of passing props: import react from react, a const variable with props and return, and then export default
 const Characters = (props) => {

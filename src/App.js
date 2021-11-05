@@ -4,29 +4,29 @@ import axios from 'axios'; //added axios as we are using that to get API info
 
 
 // importing component
-import Character from './components/Character';
+import Characters from './components/Characters';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [people, setPeople] = useState ([]);
+  const [peoples, setPeoples] = useState([]); //built out state properties
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-  useEffect(() => {
+  useEffect(() => { //added useEffect hook here to fetch API 
     axios.get('https://swapi.dev/api/people')
     .then(resp => {
-      setPeople(resp.data.people);
+      setPeoples(resp.data.results);
     })
     .catch(err => console.error(err))
-  }, [])
+  }, []) 
 
 
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
-      <Character people={people}/>
+      <Characters peoples={peoples}/> {/* added component flow here*/}
     </div>
   );
 }
