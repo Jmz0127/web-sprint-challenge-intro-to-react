@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'; //added useState and useEffect
 import './App.css';
+import React, { useState, useEffect } from 'react'; //added useState and useEffect
 import axios from 'axios'; //added axios as we are using that to get API info
 
 
 // importing component
 import Characters from './components/Characters';
 
-const App = () => {
+function App() { //changed this to a function layout
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
   const [peoples, setPeoples] = useState([]); //built out state properties
@@ -17,7 +17,9 @@ const App = () => {
   useEffect(() => { //added useEffect hook here to fetch API 
     axios.get('https://swapi.dev/api/people')
     .then(resp => {
-      setPeoples(resp.data.results);
+      console.log(resp);
+      setPeoples(resp.data);
+      // console.log(resp);
     })
     .catch(err => console.error(err))
   }, []) 

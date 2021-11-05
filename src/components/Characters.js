@@ -3,20 +3,20 @@ import Character from './Character';
 import styled from 'styled-components';
 
 // add styling here
-// const StyledCharacters = styled.div`
-
-
-
-// `
+const StyledCharacters = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
 
 //three elements of passing props: import react from react, a const variable with props and return, and then export default
 const Characters = (props) => {
     return (
-        <div> {/* change this div to StyledCharacters once styling is added */}
+        <StyledCharacters> 
             { props.peoples.map(people => (
                 <Character people={people} key={people.name} /> 
             )) }
-        </div>
+        </StyledCharacters>
     )
 }
 
